@@ -1,0 +1,11 @@
+.govuk-width-container {
+  max-width: 1340px;
+}
+  
+  .details-column {
+    height: 620px;
+  }
+
+  .scroll {
+    overflow: auto;
+  }

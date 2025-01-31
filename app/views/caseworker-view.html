@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block stylesheets %}
+{{ super() }}
+  <link href="/public/css/new-style-1.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="up-front-checks_all-passed" class="govuk-back-link">Back</a>
+  <main>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter details-column scroll">
+        <div id="tp-details-container">
+
+          {% include "./includes/tp-details.html" %}
+    
+        </div>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <img src="/public/images/map-both-title-basic.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" >
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+
+      <h1 class="govuk-heading-l">Application for DX123670</h1>
+      
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Pre-submission checks
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul>
+              <li>
+                Seller owns parent title
+              </li>
+              <li>
+                Conveyancer identity confirmed
+              </li>
+              <li>
+                Title number and address match
+              </li>
+              <li>
+                New extent within parent title
+              </li>
+              <li>
+                No gaps or slivers
+              </li>
+              <li>
+                Execution confirmed
+              </li>
+            </ul>
+            </div>
+          </details>
+
+          <h2 class="govuk-heading-l">DX123670</h2>
+
+      <strong class="govuk-tag govuk-tag--green">
+            NEW TITLE
+      </strong>
+<br><br>
+    <div>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Type of title</th>
+            <td class="govuk-table__cell">Freehold</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Title class</th>
+            <td class="govuk-table__cell">Absolute</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Address</th>
+            <td class="govuk-table__cell">Land to the front of 26 Cotham Grove</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Proprietor to be registered</th>
+            <td class="govuk-table__cell">Maria Truscott</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form action="/caseworker-view-both-titles" method="post" novalidate>
+
+      {{ govukButton({
+        text: "Start processing"
+      }) }}
+
+    </form>

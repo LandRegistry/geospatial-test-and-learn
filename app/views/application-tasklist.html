@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="gtl-context" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Review your application</h1>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Title number(s)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      DX123670
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Spatial extent
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <a class="govuk-link" href="up-front-checks_extent-errors">DX123670-tp.file<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="up-front-checks_gaps-identified">Change<span class="govuk-visually-hidden"> contact details</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      08/11/2023
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Transferor(s)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Callum Scott
+    </dd>
+    <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Transferee(s)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Maria Truscott
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address for service
+    </dt>
+    <dd class="govuk-summary-list__value">
+      26 Cotham Grove, Redlands, Bristol, BS6 6AN
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Title guarantee
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Full title guarantee
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Declaration of trust
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Not applicable
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Additional provisions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None added
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Execution
+    </dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link" href="#">e-signature.png<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+        </dd>
+      </div>
+</dl>
+<form action="/up-front-checks_all-passed" method="post" novalidate>
+  <input type="hidden" name="answers-checked" value="true">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</form>
+</div>
+</div>
+  </main>
+</div>
+{% endblock %}

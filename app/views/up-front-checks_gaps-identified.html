@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "application-tasklist"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Your application details
+      </h1>
+      <img src="/public/images/geo-new-data-map-3.png" alt="Map with gap identified for the proposed transfer" style="width:630px;height:320px;padding-bottom:20px;" > 
+      <p>
+        The following checks have been completed on the uploaded extent file and application details. You will need to amend failed checks before submitting.
+      </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Checks completed against your application</caption>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Seller owns parent title</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Conveyancer identity</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Title number and address match</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">New extent within parent title</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#">More information</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">OGC compliant data</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">No gaps or silvers</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
+              Failed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#">More information</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Execution confirmed</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <form action="/application-tasklist" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Is the extent shown correct?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+
+     <!--   {{ govukButton({
+          text: "Continue"
+        }) }} -->
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "application-tasklist"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Your application details
+      </h1>
+      <img src="/public/images/geo-new-data-map-1.png" alt="Map with extent outside of parent title" style="width:630px;height:320px;padding-bottom:20px;" > 
+      <p>
+        The following checks have been completed on the uploaded extent file and application details. You will need to amend failed checks before submitting.
+      </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Checks completed against your application</caption>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Seller owns parent title</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Conveyancer identity</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Title number and address match</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">New extent within parent title</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
+              Failed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#">More information</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">OGC compliant data</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">No gaps or silvers</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#">More information</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Execution confirmed</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
+             </strong> </td>
+             <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#"></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      <form action="/application-tasklist" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Amend application"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
