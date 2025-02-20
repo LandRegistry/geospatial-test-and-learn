@@ -1,0 +1,286 @@
+{% extends "layouts/main.html" %}
+
+{% block stylesheets %}
+{{ super() }}
+  <link href="/public/css/new-style-1.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="caseworker-view" class="govuk-back-link">Back</a>
+  <main>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter details-column scroll">
+        <div id="tp-details-container">
+
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" 
+                  content="width=device-width, initial-scale=1.0">
+            <title>Select All Checkbox</title>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+              </script>
+            <style>
+                .d1 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    flex-direction: column;
+                }
+          
+                .options_box {
+                    margin-top: 20px;
+                }
+
+            </style>
+          
+          <div class="govuk-button-group">
+            <a href="/caseworker-view-both-titles" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="background-color: #DBDAD9; margin-right:12.5px;"
+            data-module="govuk-button">
+            Overview
+            </a>
+            <a href="/caseworker-view-old-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-right:12.5px"
+            data-module="govuk-button">
+            Old title
+          </a>
+          <a href="/caseworker-view-new-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-right:12.5px"
+          data-module="govuk-button">
+          New title
+          </a>
+          </div>
+          
+                    <h2 class="govuk-heading-l">DX121778</h2>
+          
+                    <strong class="govuk-tag govuk-tag--red">
+                          OLD TITLE
+                    </strong>
+              <br><br>
+                  <div>
+                    <table class="govuk-table">
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Type of title</th>
+                          <td class="govuk-table__cell">Freehold</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Title class</th>
+                          <td class="govuk-table__cell">Absolute</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Address</th>
+                          <td class="govuk-table__cell">67 Cotham Grove</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Proprietor to be registered</th>
+                          <td class="govuk-table__cell">Callum Scott</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                  
+                    <h2 class="govuk-heading-l">DX123670</h2>
+          
+                <strong class="govuk-tag govuk-tag--green">
+                      NEW TITLE
+                </strong>
+          <br><br>
+              <div>
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Type of title</th>
+                      <td class="govuk-table__cell">Freehold</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Title class</th>
+                      <td class="govuk-table__cell">Absolute</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Address</th>
+                      <td class="govuk-table__cell">Land to the front of 26 Cotham Grove</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Proprietor to be registered</th>
+                      <td class="govuk-table__cell">Maria Truscott</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <legend class="govuk-fieldset__legend">
+                   <b>Intersecting interests</b>
+                  </legend>
+                  <!-- <div id="waste-hint" class="govuk-hint">
+                    Select all that apply
+                  </div> -->
+          
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input select_all" id="select_all" name="select_all" type="checkbox" value="select_all" onclick="return select_all();">
+                      <label class="govuk-label govuk-checkboxes__label" for="interest">
+                        Select all
+                      </label>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--visible" style="margin-bottom: 10px;">
+          
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input checkbox" id="interest" name="interest" type="checkbox" value="covenant">
+                      <label class="govuk-label govuk-checkboxes__label" for="interest">
+                        Restrictive covenant (land tinted blue)
+                      </label>
+                    </div>
+          
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                         More information
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                      Information about restrictive covenant
+                      </div>
+                    </details>
+          
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input checkbox" id="interest-2" name="interest" type="checkbox" value="easement">
+                      <label class="govuk-label govuk-checkboxes__label" for="interest-2">
+                        Easement (land tinted brown)
+                      </label>
+                    </div>
+          
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                         More information
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                      Information about easement
+                      </div>
+                    </details>
+          
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input checkbox" id="interest-3" name="interest" type="checkbox" value="mines" >
+                      <label class="govuk-label govuk-checkboxes__label" for="interest-3">
+                        Mines and minerals (land tinted orange)
+                      </label>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+              </div>
+          
+        </div>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <div class="select_all selectt">
+        <img src="/public/images/map-both-title-basic.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" >
+        </div>
+        <div class="covenant selectt">
+          <img src="/public/images/map-both-cov.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;display:none;" >
+          </div>
+          <div class="easement selectt">
+            <img src="/public/images/map-both-eas.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;display:none;" >
+            </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+          
+<script>
+  $(document).ready(function(){
+      // Select all checkboxes
+      $('#select_all').on('click', function(){
+          let chk_status = this.checked;
+  
+          // Iterate all listed checkbox items
+          $('.checkbox').each(function(){
+              this.checked = chk_status;
+          });
+      });
+      
+      // Check or uncheck "select all", if one of the listed checkbox items is checked/unchecked
+      $('.checkbox').on('click', function(){
+          if($('.checkbox:checked').length == $('.checkbox').length){
+              $('#select_all').prop('checked', true);
+          }else{
+              $('#select_all').prop('checked', false);
+          }
+      });
+  });
+
+  type="text/javascript"> 
+            $(document).ready(function() { 
+                $('input[type="checkbox"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    $("." + inputValue).toggle(); 
+                }); 
+            }); 
+  </script>
+  <!--
+  // SELECT ALL functionality experiment 1//
+  
+  $('#selectAllCheckbox').change(function () {
+    $('.checkbox').prop('checked', $(this).prop('checked'));
+  });
+  
+  $('#interest').change(function () {
+    $('.checkboxall').prop('checked', $(this).prop('checked'));
+  });
+  
+  $('#interest-2').change(function () {
+    $('.checkboxall').prop('checked', $(this).prop('checked'));
+  });
+  
+  $('#interest-3').change(function () {
+    $('.checkboxall').prop('checked', $(this).prop('checked'));
+  });
+  
+  //SELECT ALL functionality experiment 2 - SUCCESSFUL//
+  
+  $(document).ready(function(){
+      // Select all checkboxes
+      $('#select_all').on('click', function(){
+          let chk_status = this.checked;
+  
+          // Iterate all listed checkbox items
+          $('.checkbox').each(function(){
+              this.checked = chk_status;
+          });
+      });
+      
+      // Check or uncheck "select all", if one of the listed checkbox items is checked/unchecked
+      $('.checkbox').on('click', function(){
+          if($('.checkbox:checked').length == $('.checkbox').length){
+              $('#select_all').prop('checked', true);
+          }else{
+              $('#select_all').prop('checked', false);
+          }
+      });
+  });
+
+  //change page with checkbox select //
+
+  function select_all(){
+    if(document.getElementById('select_all').checked){
+        window.location='/caseworker-view-all-select';
+        return false;
+    }
+    return true;
+
+}
+-->
+
+
+{% endblock %}
