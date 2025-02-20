@@ -1,3 +1,23 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+  <title>Select All Checkbox</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+  <style>
+      .d1 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          flex-direction: column;
+      }
+
+      .options_box {
+          margin-top: 20px;
+      }
+  </style>
 
 <div class="govuk-button-group">
   <a href="/caseworker-view-both-titles" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="background-color: #DBDAD9; margin-right:12.5px;"
@@ -81,9 +101,18 @@ New title
         <!-- <div id="waste-hint" class="govuk-hint">
           Select all that apply
         </div> -->
+
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="interest" name="interest" type="checkbox" value="covenant">
+            <input class="govuk-checkboxes__input select_all" id="select_all" name="select_all" type="checkbox" value="1" onclick="return select_all();">
+            <label class="govuk-label govuk-checkboxes__label" for="interest">
+              Select all
+            </label>
+          </div>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input checkbox select_covenant" id="select_covenant" name="select_covenant" type="checkbox" value="1" onclick="return select_covenant();">
             <label class="govuk-label govuk-checkboxes__label" for="interest">
               Restrictive covenant (land tinted blue)
             </label>
@@ -96,15 +125,12 @@ New title
               </span>
             </summary>
             <div class="govuk-details__text">
-              Entry C1: A Transfer dated 24 May 1950 made between (1) David Brown and Mary Brown and (2) Jonathan Evans contains the following covenants:-<br>
-              The Purchaser with the intent to bind the land and for the benefit of the adjoining estate covenants with the Vendor as follows:<br>
-              Not to carry out any trade or business on the land shown coloured yellow on the attached plan.<br>
-              <i>Note: The land coloured yellow referred to is tinted blue on the title plan.</i>
+            Information about restrictive covenant
             </div>
           </details>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="interest-2" name="interest" type="checkbox" value="easement">
+            <input class="govuk-checkboxes__input checkbox" id="interest-2" name="interest" type="checkbox" value="easement" checked>
             <label class="govuk-label govuk-checkboxes__label" for="interest-2">
               Easement (land tinted brown)
             </label>
@@ -117,14 +143,12 @@ New title
               </span>
             </summary>
             <div class="govuk-details__text">
-              Entry A2: The land has the benefit of the following legal easement granted by a Transfer dated 24 May 1950 referred to in the Charges Register:- <br>
-              The Transferor grants upon the Purchaser and his successors in title for the benefit of the property hereby transferred a right of way on foot over the driveway shown coloured brown on the attached plan.<br>
-              <i>Note: The land driveway coloured brown referred to is tinted brown on the title plan.</i>
+            Information about easement
             </div>
           </details>
 
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="interest-3" name="interest" type="checkbox" value="mines">
+            <input class="govuk-checkboxes__input checkbox" id="interest-3" name="interest" type="checkbox" value="mines">
             <label class="govuk-label govuk-checkboxes__label" for="interest-3">
               Mines and minerals (land tinted orange)
             </label>
@@ -133,3 +157,76 @@ New title
         </div>
       </fieldset>
     </div>
+
+
+<script>
+function select_all(){
+    if(document.getElementById('select_all').checked){
+        window.location='/caseworker-view-all-select';
+        return false;
+    }
+    return true;
+
+}
+
+function select_easement(){
+    if(document.getElementById('select_easement').checked){
+        window.location='/caseworker-view-both-easement';
+        return false;
+    }
+    return true;
+
+}
+
+function select_covenant(){
+    if(document.getElementById('select_covenant').checked){
+        window.location='/caseworker-view-both-covenant';
+        return false;
+    }
+    return true;
+
+}
+
+</script>
+<!--
+// SELECT ALL functionality experiment 1//
+
+$('#selectAllCheckbox').change(function () {
+  $('.checkbox').prop('checked', $(this).prop('checked'));
+});
+
+$('#interest').change(function () {
+  $('.checkboxall').prop('checked', $(this).prop('checked'));
+});
+
+$('#interest-2').change(function () {
+  $('.checkboxall').prop('checked', $(this).prop('checked'));
+});
+
+$('#interest-3').change(function () {
+  $('.checkboxall').prop('checked', $(this).prop('checked'));
+});
+
+//SELECT ALL functionality experiment 2 - SUCCESSFUL//
+
+$(document).ready(function(){
+    // Select all checkboxes
+    $('#select_all').on('click', function(){
+        let chk_status = this.checked;
+
+        // Iterate all listed checkbox items
+        $('.checkbox').each(function(){
+            this.checked = chk_status;
+        });
+    });
+    
+    // Check or uncheck "select all", if one of the listed checkbox items is checked/unchecked
+    $('.checkbox').on('click', function(){
+        if($('.checkbox:checked').length == $('.checkbox').length){
+            $('#select_all').prop('checked', true);
+        }else{
+            $('#select_all').prop('checked', false);
+        }
+    });
+});
+-->
