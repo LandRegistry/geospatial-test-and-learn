@@ -10,6 +10,43 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  /* .d1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+  }
+
+  .options_box {
+      margin-top: 20px;
+  } */
+
+  .hidden {
+    display: none;
+    }
+
+    .show {
+    display: inline-block;
+    }
+  .css-toggle:checked + .hidden {
+    display: inline-block;
+  }
+
+  .image-container {
+    border: 0;
+    float: left;
+    position: relative;
+  }
+  .easement-transparent {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+</style>
 <div class="govuk-width-container">
   <a href="caseworker-view" class="govuk-back-link">Back</a>
   <main>
@@ -24,19 +61,7 @@
             <title>Select All Checkbox</title>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js">
               </script>
-            <style>
-                .d1 {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    flex-direction: column;
-                }
-          
-                .options_box {
-                    margin-top: 20px;
-                }
-            </style>
+            
           
           <div class="govuk-button-group">
             <a href="/caseworker-view-both-titles" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="background-color: #DBDAD9; margin-right:12.5px;"
@@ -123,7 +148,7 @@
           
                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input select_all" id="select_all" name="interest" type="checkbox" value="covenant">
+                      <input class="govuk-checkboxes__input select_all" id="select_all" name="interest" type="checkbox" value="covenant" onclick="showAll('secondOption')">
                       <label class="govuk-label govuk-checkboxes__label" for="interest">
                         Select all
                       </label>
@@ -132,7 +157,7 @@
                     
                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input checkbox" id="interest" name="interest" type="checkbox" value="covenant">
+                      <input class="govuk-checkboxes__input checkbox" id="interest" name="interest" type="checkbox" value="covenant" onclick="showCovenant('secondOption')">
                       <label class="govuk-label govuk-checkboxes__label" for="interest">
                         Restrictive covenant (land tinted blue)
                       </label>
@@ -153,7 +178,7 @@
                     </details>
           
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input checkbox" id="interest-2" name="interest" type="checkbox" value="easement" onclick="showOption('secondOption')">
+                      <input class="govuk-checkboxes__input checkbox" id="interest-2" name="interest" type="checkbox" value="easement" onclick="showEasement('secondOption')">
                       <label class="govuk-label govuk-checkboxes__label" for="interest-2">
                         Easement (land tinted brown)
                       </label>
@@ -177,7 +202,7 @@
                     </details>
           
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input checkbox" id="interest-3" name="interest" type="checkbox" value="mines" >
+                      <input class="govuk-checkboxes__input checkbox" id="interest-3" name="interest" type="checkbox" value="mines" onclick="showMines('secondOption')">
                       <label class="govuk-label govuk-checkboxes__label" for="interest-3">
                         Mines and minerals (land tinted orange)
                       </label>
@@ -190,9 +215,15 @@
     
         </div>
       </div>
-      <div class="govuk-grid-column-three-quarters">
-        <img src="/public/images/map-both-title-basic.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" >
+
+      <div class="govuk-grid-column-three-quarters image-container">
+        <img src="/public/images/map-both-title-basic.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="easement-transparent"> 
+        <img src="/public/images/easement-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="brown-easement">
+        <img src="/public/images/restrictive-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="blue-covenant">
+        <img src="/public/images/mines-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="orange-mines">
       </div>
+      </div>
+
     </div>
   </main>
 </div>
@@ -209,6 +240,9 @@
           $('.checkbox').each(function(){
               this.checked = chk_status;
           });
+          showEasement ();
+          showCovenant ();
+          showMines ();
       });
       
       // Check or uncheck "select all", if one of the listed checkbox items is checked/unchecked
@@ -219,18 +253,53 @@
               $('#select_all').prop('checked', false);
           }
       });
+     
   });
 
-  function showOption (box) {
-        var checkbox = document.getElementsByName("item1");
-        var vis = "none";
-        for(var i=0;i<checkbox.length;i++) { 
-            if(checkbox[i].checked){
-             vis = "block";
-                break;
-            }
-        }     document.getElementById(box).style.display = vis;
+  
+  function showEasement (box) {
+    if ($('#interest-2').is(':checked')) {
+      // alert ('things');
+      $('#brown-easement').addClass('show');
+      $('#brown-easement').removeClass('hidden');
+    }else{
+      $('#brown-easement').removeClass('show');
+      $('#brown-easement').addClass('hidden');
     }
+    
+    }
+
+    function showCovenant (box) {
+    if ($('#interest').is(':checked')) {
+      // alert ('things');
+      $('#blue-covenant').addClass('show');
+      $('#blue-covenant').removeClass('hidden');
+    }else{
+      $('#blue-covenant').removeClass('show');
+      $('#blue-covenant').addClass('hidden');
+    }
+  }
+
+    function showMines (box) {
+      if ($('#interest-3').is(':checked')) {
+      // alert ('things');
+      $('#orange-mines').addClass('show');
+      $('#orange-mines').removeClass('hidden');
+    }else{
+      $('#orange-mines').removeClass('show');
+      $('#orange-mines').addClass('hidden');
+    }
+  }
+
+    // function showAll (box) {
+    // $('#blue-covenant').addClass('show');
+    // $('#blue-covenant').removeClass('hidden');
+    // $('#brown-easement').addClass('show');
+    // $('#brown-easement').removeClass('hidden');
+    // $('#orange-mines').addClass('show');
+    // $('#orange-mines').removeClass('hidden');
+    // }
+
 
   </script>
 
