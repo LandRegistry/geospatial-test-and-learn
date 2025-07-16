@@ -18,7 +18,7 @@
       <h1 class="govuk-heading-xl">
         Your application details
       </h1>
-      <img src="/public/images/geo-new-data-map-1.png" alt="Map with extent outside of parent title" style="width:630px;height:320px;padding-bottom:20px;" > 
+      <img src="/public/images/geo-new-data-map-2.png" alt="Map with transfer of part extent" style="width:630px;height:320px;padding-bottom:20px;" > 
       <p>
         The following checks have been completed on the uploaded extent file and application details. You will need to amend failed checks before submitting.
       </p>
@@ -50,8 +50,8 @@
           </tr>
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">New extent within parent title</td>
-            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
-              Failed
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--green">
+              Passed
              </strong> </td>
              <td scope="row" class="govuk-table__cell govuk-table__cell--numeric"><a href="#">More information</a></td>
           </tr>
@@ -83,10 +83,10 @@
 
 
 
-      <form action="/application-tasklist" method="post" novalidate>
+      <form action="caseworker-view" method="post" novalidate>
 
         {{ govukButton({
-          text: "Amend application"
+          text: "Submit"
         }) }}
 
       </form>

@@ -64,50 +64,19 @@
             
           
           <div class="govuk-button-group">
-            <a href="/caseworker-view-both-titles" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="background-color: #DBDAD9; margin-right:12.5px;"
+            <a href="/demo-prototype/caseworker-view-both-titles" role="button" draggable="false" class="govuk-button govuk-button--secondary" style=" margin-right:12.5px;"
             data-module="govuk-button">
             Overview
             </a>
-            <a href="/caseworker-view-old-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-right:12.5px"
+            <a href="/demo-prototype/caseworker-view-old-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-right:12.5px"
             data-module="govuk-button">
             Old title
           </a>
-          <a href="/caseworker-view-new-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="margin-right:12.5px"
+          <a href="/demo-prototype/caseworker-view-new-title" role="button" draggable="false" class="govuk-button govuk-button--secondary" style="background-color: #DBDAD9; margin-right:12.5px"
           data-module="govuk-button">
           New title
           </a>
           </div>
-          
-                    <h2 class="govuk-heading-l">DX121778
-                      <br>
-                      <strong class="govuk-tag govuk-tag--red">
-                        OLD TITLE
-                  </strong>
-                    </h2>
-          
-                  <div>
-                    <table class="govuk-table">
-                      <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header">Type of title</th>
-                          <td class="govuk-table__cell">Freehold</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header">Title class</th>
-                          <td class="govuk-table__cell">Absolute</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header">Address</th>
-                          <td class="govuk-table__cell">67 Cotham Grove</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header">Proprietor to be registered</th>
-                          <td class="govuk-table__cell">Callum Scott</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-          
                   
                     <h2 class="govuk-heading-l">DX123670
                       <br>
@@ -179,37 +148,6 @@
                       </div>
                     </details>
           
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input checkbox" id="interest-2" name="interest" type="checkbox" value="easement" onclick="showEasement('secondOption')">
-                      <label class="govuk-label govuk-checkboxes__label" for="interest-2">
-                        Easement (land tinted brown)
-                      </label>
-                    </div>
-                    
-                    <div id="secondOption" style="display:none">
-                      <input type="text" id="secondOption">
-                      </div>
-          
-                    <details class="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                         More information
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        Entry A2: The land has the benefit of the following legal easement granted by a Transfer dated 24 May 1950 referred to in the Charges Register:- <br>
-                        The Transferor grants upon the Purchaser and his successors in title for the benefit of the property hereby transferred a right of way on foot over the driveway shown coloured brown on the attached plan.<br>
-                        <i>Note: The land driveway coloured brown referred to is tinted brown on the title plan.</i>
-                      </div>
-                    </details>
-          
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input checkbox" id="interest-3" name="interest" type="checkbox" value="mines" onclick="showMines('secondOption')">
-                      <label class="govuk-label govuk-checkboxes__label" for="interest-3">
-                        Mines and minerals (land tinted orange)
-                      </label>
-                    </div>
-                    
                   </div>
                 </fieldset>
               </div>
@@ -219,7 +157,7 @@
       </div>
 
       <div class="govuk-grid-column-three-quarters image-container">
-        <img src="/public/images/map-both-title-basic.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="easement-transparent"> 
+        <img src="/public/images/new-title-base.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="easement-transparent"> 
         <img src="/public/images/easement-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="brown-easement">
         <img src="/public/images/restrictive-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="blue-covenant">
         <img src="/public/images/mines-trans.png" alt="Map with transfer of part extent" style="width:1028px;height:720px;" class="hidden easement-transparent" id="orange-mines">
@@ -292,16 +230,6 @@
       $('#orange-mines').addClass('hidden');
     }
   }
-
-    // function showAll (box) {
-    // $('#blue-covenant').addClass('show');
-    // $('#blue-covenant').removeClass('hidden');
-    // $('#brown-easement').addClass('show');
-    // $('#brown-easement').removeClass('hidden');
-    // $('#orange-mines').addClass('show');
-    // $('#orange-mines').removeClass('hidden');
-    // }
-
 
   </script>
 
