@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/index"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  </style>
+
+{% include "./includes/os-colours.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="container">
+        <p>Multi Surface Fill</p> 
+        <p>Archway Fill</p> 
+        <p>Road Bridge Fill</p> 
+        <p>Rail Bridge Fill</p> 
+
+      </div>
+
+      <div class="container">
+        <div class="square1"></div>
+        <div class="square2"></div>
+        <div class="square3"></div>
+        <div class="square4"></div>
+      </div>
+
+<br><br>
+
+<div class="container">
+  <p>Bridge Fill</p> 
+  <p>Level Crossing Fill</p> 
+  <p>Traffic Calming Fill</p> 
+  <p>Pylon Fill</p> 
+
+</div>
+
+<div class="container">
+  <div class="square5"></div>
+  <div class="square6"></div>
+  <div class="square7"></div>
+  <div class="square8"></div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <p>Track Fill</p> 
+  <p>Step Fill</p> 
+  <p>Canal Fill</p> 
+  <p>Footbridge Fill</p> 
+
+</div>
+
+<div class="container">
+  <div class="square9"></div>
+  <div class="square10"></div>
+  <div class="square11"></div>
+  <div class="square12"></div>
+</div>
+
+  <br><br>
+
+<div class="container">
+  <p>Mixed Woodland</p> 
+  <p>Nonconiferous Tree</p> 
+  <p>Coniferous Tree</p> 
+  <p>Agricultural Land</p> 
+
+</div>
+
+<div class="container">
+  <div class="square13"></div>
+  <div class="square14"></div>
+  <div class="square15"></div>
+  <div class="square16"></div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <p>Orchard Fill</p> 
+  <p>Coppice or Osiers</p> 
+  <p>Scrub Fill</p> 
+  <p>Boulders Fill</p> 
+
+</div>
+
+<div class="container">
+  <div class="square17"></div>
+  <div class="square18"></div>
+  <div class="square19"></div>
+  <div class="square20"></div>
+</div>
+
+<br><br>
+
+<div class="container">
+  <p>Rock Fill</p> 
+  <p>Scree Fill</p> 
+  <p>Rough Grassland</p> 
+  <p>Heath Fill</p> 
+
+</div>
+
+<div class="container">
+  <div class="square20"></div>
+  <div class="square20"></div>
+  <div class="square19"></div>
+  <div class="square19"></div>
+</div>
+
+
+</div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+  </div>
+  </div>
+
+{% endblock %}

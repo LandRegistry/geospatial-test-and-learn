@@ -1,0 +1,313 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/index"
+      },
+      {
+        text: "Proof of Concept",
+        href: "gtl-context"
+      },
+      {
+        text: "OS Colours",
+        href: "os-colours-index"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+  .container {
+    display: flex;
+    gap: 30px;
+    align-items: left;
+  }
+
+  </style>
+
+{% include "./includes/os-colours2.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl">OS Map Topo Area Colours (Outdoor style)</h1>
+      <div class="container">
+        <div class="square1"></div>
+        <p>#eeefda</p>
+        <ul class="govuk-body">
+          <li>Multi Surface Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square2"></div>
+        <p>#dcd7c6</p>
+        <ul class="govuk-body">
+          <li>Archway Fill</li>
+          <li>Building Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square3"></div>
+        <p>#e6dddd</p>
+        <ul class="govuk-body">
+          <li>Road Bridge Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square4"></div>
+        <p>#fcfdff</p>
+        <ul class="govuk-body">
+          <li>Rail Bridge Fill</li>
+          <li>Level Crossing Fill</li>
+          <li>Traffic Calming Fill</li>
+          <li>Road or Track Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square5"></div>
+        <p>#d6d2d2</p>
+        <ul class="govuk-body">
+          <li>Bridge Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square6"></div>
+        <p>#eee8d3</p>
+        <ul class="govuk-body">
+          <li>Pylon Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square7"></div>
+        <p>#dcdcdb</p>
+        <ul class="govuk-body">
+          <li>Track Fill</li>
+          <li>Step Fill</li>
+          <li>Path Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square8"></div>
+        <p>#aadeef</p>
+        <ul class="govuk-body">
+          <li>Canal Fill</li>
+          <li>Reeds Fill</li>
+          <li>Inland Water Fill</li>
+          <li>Tidal Water Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square9"></div>
+        <p>#e8cfcc</p>
+        <ul class="govuk-body">
+          <li>Footbridge Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square10"></div>
+        <p>#cee6bd</p>
+        <ul class="govuk-body">
+          <li>Mixed Woodland Fill</li>
+          <li>Nonconiferous Tree Fill</li>
+          <li>Coniferous Tree Fill</li>
+          <li>Orchard Fill</li>
+          <li>Coppice Or Osiers Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square11"></div>
+        <p>#d6edcf</p>
+        <ul class="govuk-body">
+          <li>Agricultural Land Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square12"></div>
+        <p>#e2efce</p>
+        <ul class="govuk-body">
+          <li>Scrub Fill</li>
+          <li>Rough Grassland Fill</li>
+          <li>Heath Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square13"></div>
+        <p>#eaeae4</p>
+        <ul class="govuk-body">
+          <li>Boulders Fill</li>
+          <li>Rock Fill</li>
+          <li>Scree Fill</li>
+          <li>Shingle Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square14"></div>
+        <p>#e4f3fa</p>
+        <ul class="govuk-body">
+          <li>Saltmarsh Fill</li>
+          <li>Marsh Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square15"></div>
+        <p>#f4f0d3</p>
+        <ul class="govuk-body">
+          <li>Sand Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square16"></div>
+        <p>#e8e4dd</p>
+        <ul class="govuk-body">
+          <li>Mud Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square17"></div>
+        <p>#eaead3</p>
+        <ul class="govuk-body">
+          <li>Foreshore Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square18"></div>
+        <p>#669966</p>
+        <ul class="govuk-body">
+          <li>Slope Fill (refers to a dashed line pattern rather than a solid fill)</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square19"></div>
+        <p>#666666</p>
+        <ul class="govuk-body">
+          <li>Cliff Fill (refers to a dashed line pattern rather than a solid fill)</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square20"></div>
+        <p>#dcd7c6</p>
+        <ul class="govuk-body">
+          <li>Building Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square21"></div>
+        <p>#e4efda</p>
+        <ul class="govuk-body">
+          <li>Natural Fill</li>
+          <li>Landform Natural Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square22"></div>
+        <p>#f2f2e9</p>
+        <ul class="govuk-body">
+          <li>Manmade Fill</li>
+          <li>Roadside Manmade Fill</li>
+          <li>Landform Manmade Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square23"></div>
+        <p>#fcfdff</p>
+        <ul class="govuk-body">
+          <li>Road or Track Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square24"></div>
+        <p>#dde6d5</p>
+        <ul class="govuk-body">
+          <li>Roadside Natural Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square25"></div>
+        <p>#cccbcb</p>
+        <ul class="govuk-body">
+          <li>Rail Manmade Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square26"></div>
+        <p>#dce5d3</p>
+        <ul class="govuk-body">
+          <li>Rail Natural Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square27"></div>
+        <p>#e7c9c8</p>
+        <ul class="govuk-body">
+          <li>Structure Fill</li>
+        </ul>
+      </div>
+<br><br>
+      <div class="container">
+        <div class="square28"></div>
+        <p>#f3f9f4</p>
+        <ul class="govuk-body">
+          <li>Glasshouse Fill</li>
+        </ul>
+      </div>
+      <br><br>
+      <div class="container">
+        <div class="square29"></div>
+        <p>#f8f6f0</p>
+        <ul class="govuk-body">
+          <li>Unclassified</li>
+        </ul>
+      </div>
+
+</div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+  
+  </div>
+  </div>
+
+{% endblock %}

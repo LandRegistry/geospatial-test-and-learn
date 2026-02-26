@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/index"
+      },
+      {
+        text: "Proof of Concept",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<style>
+  .container {
+    display: flex;
+    gap: 30px;
+    align-items: left;
+  }
+
+  </style>
+
+{% include "./includes/os-colours2.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl">OS Map Colours</h1>
+<h2 class="govuk-heading-m">Outdoor Style</h2>
+
+<p><a href="os-colours2">OS Topographic Area</a></p>
+<p><a href="#">OS Topographic Line</a></p>
+<p><a href="#">OS Topographic Point</a></p>
+<p><a href="#">OS Cartographic Text</a></p>
+<p><a href="#">OS Cartographic Symbol</a></p>
+<p><a href="#">OS Cartographic Text</a></p>
+<p><a href="#">OS Boundary Line</a></p>
+     
+</div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+  
+  </div>
+  </div>
+
+{% endblock %}
