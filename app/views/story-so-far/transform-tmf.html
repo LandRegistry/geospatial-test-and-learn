@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       Transforming TMF
+      </h1>
+      <h2 class="govuk-heading-m">
+        What is TMF?
+      </h2>
+      <p>HMLR’s spatial data is still stored in Tenet Mapping Format (TMF), a proprietary, non‑open format dating back to the 1990s. 
+        Our Computer Mapping System uses this proprietary format from Envitia Limited, creating a corporate risk due to vendor dependency and incompatibility with modern geospatial technologies </p>
+
+        <h2 class="govuk-heading-m">
+          Why transform TMF?
+        </h2>
+
+        <p>At present:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It is not widely supported</li>
+        <li>The format is proprietary and fragile</li>
+        <li>Using TMF doesn't align with open, sustainable data standards</li>
+        <li>Our spatial data cannot be used with external geospatial systems</li>
+        <li>The constraints of TMF vastly limit the opportunities for HMLR's geospatial ambitions</li>
+      </ul>
+      <p>In other words, TMF is a massive warning sign and risk that needs to be addressed.</p>
+
+      <img src="/public/images/tmf-issues2.png" alt="Map view with warnings" style="width:650px;height:360px;">
+      <br><br>
+
+      <p>We need to convert this data into structured, interactive, machine-readable formats. 
+        We will then have a comprehensive repository of geospatial data related to property and ownership, accessible in multiple ways for various uses by different customers. 
+        This will unlock numerous opportunities, further enhanced by enabling technologies.</p>
+
+        <p>This could mean</p>
+
+     <!-- {{ govukButton({
+        text: "Start now",
+        href: "map-test",
+        isStartButton: true
+      }) }} -->
+
+      <h2 class="govuk-heading-m">
+        What have we done?
+      </h2>
+
+      <p>
+        This section should update with the design history and contextual information for this piece of work.
+      </p>
+      <p><strong>"Develop and prove a method for transforming scanned spatial data into machine interpretable spatial data (Digitising raster titles)"</strong></p>
+        
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <!-- navigation information  -->
+        {% include "./includes/side-navigation.html" %}
+      <!-- end - navigation information  -->
+    </div>
+
+  </div>
+
+{% endblock %}

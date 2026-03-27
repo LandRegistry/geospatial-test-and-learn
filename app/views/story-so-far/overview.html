@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<style>
+    .image-container {
+    border: 0;
+    float: right;
+    position: relative;
+  }
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       What is a Geospatial Register?
+      </h1>
+
+
+      <p>The Geosptial Register is an ambition of HMLR, to have all of our register data held in a geospatial format.
+        This will be enabled through projects like Test and Learn which has been exploring the capabilities required to make this aim a reality.</p>
+        
+      <p>The creation of a geospatially enabled register represents a massive modernization effort for HM Land Registry and a disentangling from current legacy systems which are laden with risk and have become increasingly difficult to support over time.</p>
+
+        <p>A geospatial register would:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Enable better sharing of data</li>
+        <li>Streamline transactions</li>
+      </ul>
+
+     <!-- {{ govukButton({
+        text: "Start now",
+        href: "map-test",
+        isStartButton: true
+      }) }} -->
+
+      <h2 class="govuk-heading-m">
+        Okay, but what actually is it?
+      </h2>
+
+      <p>
+        Our current data is held in multiple places, and is split into text and spatial data.
+         In a lot of cases you need both in order to make an informed decision regarding the information, but there is currently no single place where the textual and spatial sides of the register are linked.
+         We currently rely on manual comparison and confusing plans. These can be difficult to interpret for a number of reasons. A geospatially enabled register is an opportunity to fix a lot of those issues.
+      </p>
+
+      <p>We may define geospatial as... when applied to register data that means...</p>
+
+        <img src="/public/images/visualising-geo-register.png" alt="visual of geospatial layers" style="width:660px;height:1000px;" >
+
+        <img src="/public/images/bristol-split.png" alt="visual of geospatial layers and interests" style="width:700px;height:430px;" >
+
+    </div>
+
+      <div class="govuk-grid-column-one-third">
+        <!-- navigation information  -->
+	        {% include "./includes/side-navigation.html" %}
+	      <!-- end - navigation information  -->
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
