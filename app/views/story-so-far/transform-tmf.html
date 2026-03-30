@@ -30,11 +30,17 @@
       <h1 class="govuk-heading-xl">
        Transforming TMF
       </h1>
+
+      <strong class="govuk-tag">
+        DRAFT CONTENT
+      </strong>
+      <br><br>
+
       <h2 class="govuk-heading-m">
         What is TMF?
       </h2>
       <p>HMLR’s spatial data is still stored in Tenet Mapping Format (TMF), a proprietary, non‑open format dating back to the 1990s. 
-        Our Computer Mapping System uses this proprietary format from Envitia Limited, creating a corporate risk due to vendor dependency and incompatibility with modern geospatial technologies </p>
+        Our Computer Mapping System uses this proprietary format from Envitia Limited, creating a corporate risk due to vendor dependency and incompatibility with modern geospatial technologies. </p>
 
         <h2 class="govuk-heading-m">
           Why transform TMF?
@@ -48,7 +54,7 @@
         <li>Our spatial data cannot be used with external geospatial systems</li>
         <li>The constraints of TMF vastly limit the opportunities for HMLR's geospatial ambitions</li>
       </ul>
-      <p>In other words, TMF is a massive warning sign and risk that needs to be addressed.</p>
+      <p>This legacy constraint limits automation, data usability, and interoperability. In other words, TMF is a flashing warning sign, and risk that needs to be addressed before any progress to be made on the state of HMLR's spatial data.</p>
 
       <img src="/public/images/tmf-issues2.png" alt="Map view with warnings" style="width:650px;height:360px;">
       <br><br>
@@ -57,25 +63,54 @@
         We will then have a comprehensive repository of geospatial data related to property and ownership, accessible in multiple ways for various uses by different customers. 
         This will unlock numerous opportunities, further enhanced by enabling technologies.</p>
 
-        <p>This could mean</p>
-
-     <!-- {{ govukButton({
-        text: "Start now",
-        href: "map-test",
-        isStartButton: true
-      }) }} -->
 
       <h2 class="govuk-heading-m">
-        What have we done?
+        What did we do?
       </h2>
 
       <p>
-        This section should update with the design history and contextual information for this piece of work.
-      </p>
-      <p><strong>"Develop and prove a method for transforming scanned spatial data into machine interpretable spatial data (Digitising raster titles)"</strong></p>
-        
+        <ul class="govuk-list govuk-list--bullet">
+        <li><strong>Extracted TMF data</strong> from legacy systems into a modern cloud database (Postgres).</li> 
 
-    </div>
+        <li><strong>Converted TMF polygons and attributes</strong> into open geospatial formats (WKT/PostGIS) using a repeatable, automated process.</li> 
+    
+        <li><strong>Validated the results</strong> by comparing transformed geometries against existing CMS exports and OS mapping—showing strong alignment. 
+    
+        <li><strong>Built early tools and views</strong> that allow geospatial search, visualisation, and linking with register data.</li> 
+        </ul> 
+      </p>
+
+      <img src="/public/images/tmf-compare.png" alt="diagram showing connections with TMF compared to open formats" style="width:650px;height:310px;">
+
+      <h2 class="govuk-heading-m">
+        What did we prove?
+      </h2>
+<p>This worked has proved that TMF data can be transformed reliably outside existing casework systems. 
+  It has also shown that the transformed data works well in modern GIS tools such as QGIS. 
+  With the transformed data we can perform spatial searches (e.g., “find interests within 10 metres”), something not possible with TMF. 
+  The work in transforming TMF also shows that there is a viable path to linking geospatial extents with textual register entries. 
+</p>
+      <h2 class="govuk-heading-m">
+        Why does it matter?
+      </h2>
+      <p>The issues with TMF at present are many, and only present more risks over time. Establishing a viable method to transform TMF gives us a clear path forward in securing the use of our data in the future.</p>
+      <p><strong>"TMF has been a major blocker to modernisation. This work shows we can move away from a proprietary, fragile format into open, sustainable data standards. "</strong></p>
+        <p>Transforming TMF reduces corporate risk and opens opportunities for:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Better geospatial services</li>
+          <li>Enhanced Digital Register capabilities</li>
+          <li>Future casework tools not tied to TMF</li>
+          <li>Improved automation and data quality</li>
+          </ul>
+        <p>We demonstrated that transforming TMF into open geospatial formats is feasible, accurate and repeatable. This unlocks the potential to modernise mapping systems, improve register data, and support future digital services.</p>
+    
+        <h2 class="govuk-heading-m">
+          What next?
+        </h2>
+    
+      </div>
+
+
 
     <div class="govuk-grid-column-one-third">
       <!-- navigation information  -->
