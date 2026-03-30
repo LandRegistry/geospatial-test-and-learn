@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/index"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        The story so far
+      </h1>
+
+      <strong class="govuk-tag">
+        DRAFT CONTENT
+      </strong>
+      <br><br>
+
+      <p>The aim of the test and learn work is to build the capabilities required for a Geospatial Register.
+        This will be acheived by transforming the data in a 5K sample area of Bristol.
+      </p>
+
+        <p>There are 6 key areas of the work which support this aim</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Create data from raster title plans</li>
+        <li>Convert vector (TMF) data to an open data format</li>
+        <li>Match textual and spatial register data</li>
+        <li>Extract text from deeds</li>
+        <li>Join text from deeds to the combined textual and spatial data</li>
+        <li>Visualise the result</li>
+      </ul>
+     
+      <p>To validate the results in the Bristol 5K, the team are also testing methods using data from 3 local authorities: Gloucester, Manchester and Bournemouth. </p>
+
+      <img src="/public/images/bristol-map2.png" alt="Map of Bristol with " style="width:600px;height:450px;">
+     <!-- {{ govukButton({
+        text: "Start now",
+        href: "map-test",
+        isStartButton: true
+      }) }} -->
+
+      <h2 class="govuk-heading-m">
+        So what are Test and Learn doing?
+      </h2>
+
+      <p>
+        Test and Learn is testing methods to build the capabilities to build a geospatially enabled register. Much like building a house, there's a lot that needs to be done before you can start building. 
+        This includes getting the right tools in place, figuring out the right materials to use and understanding which methods will work: Test and Learn is working in all of these areas to understand how HMLR can create those building blocks.
+        
+        <p>First digging for the clay, identifying existing problem areas, looking at the TMF, considering extraction from deeds etc.</p>
+            <img src="/public/images/clay-1.png" alt="Illustration of person digging clay" style="width:500px;height:318px;">
+
+        <p> The team then tested ways of transforming those raw materials into something new and useable.</p>
+            <img src="/public/images/clay-2.png" alt="Illustration of forming bricks" style="width:500px;height:318px;">
+
+        <p>These methods were tested to check how well they stand up. Like firing bricks, this helps us see where to issues might lie and get a good sense of what works, pretty much testing each method to breaking point.</p>
+            <img src="/public/images/clay-3.png" alt="Illustration of firing bricks" style="width:500px;height:318px;">
+
+        <p>And from the successful methods, we were able to visualise that result, laying the foundations for the ambition of a geospatial register.</p>
+            <img src="/public/images/clay-4.png" alt="Illustration of laying bricks" style="width:500px;height:318px;">
+
+        <p>Test and learn isn't building the house, but providing methods for making house building possible - from there the Geospatial Register could still take many forms.</p>
+            <img src="/public/images/houses.png" alt="Illustration of different types of houses" style="width:740px;height:200px;">
+       
+            <p>Test and Learn is not about building a service or building the register, but instead figuring out how it might be possible. The answers are not all there, and there is no case study which takes into account the myriad of complexities in HMLR's data and practices.</p> 
+              <p>This work is therefore vital to support the future ambitions of the business and move forward from a sure foundation and understanding. The work from the Test and Learn team represents a signifcant improvement to our knowledge about the register and the methods for modernizing it.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <!-- navigation information  -->
+        {% include "./includes/side-navigation.html" %}
+      <!-- end - navigation information  -->
+  </div>
+
+  </div>
+
+{% endblock %}

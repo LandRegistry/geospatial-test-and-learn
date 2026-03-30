@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       Matching textual and spatial data
+      </h1>
+
+      <strong class="govuk-tag">
+        DRAFT CONTENT
+      </strong>
+      <br><br>
+
+      <h2 class="govuk-heading-m">
+    
+      </h2>
+      <p> </p>
+
+      <img src="/public/images/matching-vis.png" alt="illustration showing different layers linked to entry snippets" style="width:510px;height:600px;">
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <!-- navigation information  -->
+        {% include "./includes/side-navigation.html" %}
+      <!-- end - navigation information  -->
+    </div>
+    
+  </div>
+
+{% endblock %}

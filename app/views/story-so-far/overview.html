@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<style>
+    .image-container {
+    border: 0;
+    float: right;
+    position: relative;
+  }
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       What is a Geospatial Register?
+      </h1>
+
+      <strong class="govuk-tag">
+        DRAFT CONTENT
+      </strong>
+      <br><br>
+
+      <p>The Geosptial Register is an ambition of HMLR, to have all of our register data held in a geospatial format.
+        This will be enabled through projects like Test and Learn which has been exploring the capabilities required to make this aim a reality.</p>
+        
+      <p>The creation of a geospatially enabled register represents a massive modernization effort for HM Land Registry and a disentangling from current legacy systems which are laden with risk and have become increasingly difficult to support over time.</p>
+
+        <p>A geospatial register could:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Enable improved data sharing</li>
+        <li>Streamline transactions (for citizens, conveyancers and caseworkers)</li>
+        <li>Incorporate new tools and systems</li>
+        <li>Future proof land registration</li>
+      </ul>
+
+     <!-- {{ govukButton({
+        text: "Start now",
+        href: "map-test",
+        isStartButton: true
+      }) }} -->
+
+      <h2 class="govuk-heading-m">
+        Okay, but what actually is it?
+      </h2>
+
+      <p>
+        Our current data is held in multiple places, and is split into text and spatial data.
+         In a lot of cases you need both in order to make an informed decision regarding the information, but there is currently no single place where the textual and spatial sides of the register are linked.
+         We currently rely on manual comparison and confusing plans. These can be difficult to interpret for a number of reasons. A geospatially enabled register is an opportunity to fix a lot of those issues.
+      </p>
+
+    
+        <img src="/public/images/visualising-geo-register.png" alt="visual of geospatial layers" style="width:660px;height:1000px;" >
+        <p>Geospatial data has both a spatial component (in our case title plans, title and interest boundaries) and an attribute componenet (any details that describe what is there, such as a restriction, easement, covenant, the proprietor or the amount of a charge)</p>
+        <p>In a Geospatial Register, HMLR's spatial and textual data would be inextricably linked and able to be interrogated. Data is split into layers which can be viewed to determine a wide scale spread of interests, not just linked to a single plan, but those that impact nearby titles too.</p>
+        <p>Structuring land registration data in this way supports a wider picture view of all data and makes it both more easily interpretable by humans and by other digital systems.</p>
+        <img src="/public/images/bristol-split.png" alt="visual of geospatial layers and interests" style="width:700px;height:430px;">
+
+    </div>
+
+      <div class="govuk-grid-column-one-third">
+        <!-- navigation information  -->
+	        {% include "./includes/side-navigation.html" %}
+	      <!-- end - navigation information  -->
+    </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Geospatial test and learn - The story so far
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "gtl-context"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       Rasters
+      </h1>
+
+      <strong class="govuk-tag">
+        DRAFT CONTENT
+      </strong>
+      <br><br>
+
+      <p>The aim of this piece of work is to <strong>"develop and prove a method for transforming scanned spatial data into machine interpretable spatial data (digitising raster titles)"</strong></p>
+
+
+      <h2 class="govuk-heading-m">
+        What is the problem?
+      </h2>
+
+      <p>
+         More than half of our spatial data isn't currently held in a digital format. 
+         Over 50% of HMLRs spatial data still exists in a format which is not machine interpretable, not machine readable and not able to be used with modern digital tools.
+         This is split primarily between things which are stored on paper and things which are stored as scanned documents - esstentially as useful as paper, with the exception that you can view it anywhere at any time.</p>
+
+         <p>This is quite a big deal for the ambition of having a geospatial register as it means over half of our spatial data cannot currently be used.
+         To fix this, that data needs to be digitized and made to be machine readable.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What is a raster?
+      </h2>
+      <p>We are calling these file types rasters, but unfortunately they're not actual rasters, they're essentially just a picture. A raster as we've referenced it in this project is simply a digital scan of a title plan document. These are generally stored as PDFs. 
+        They represent one on 3 ways our plans data is currently stored, the others being paper plans in the File Store which have never been scanned in, and the digital plans currently held in TMF. 
+        It contains no metadata or further information about the spatial extent it indicates. That indication is only for the human eye as it is currently not machine readable. </p>
+      
+        <img src="/public/images/file-types.png" alt="Illustration showing the types of files in land registry" style="width:630px;height:490px;">
+<br><br>
+        <p>The work in digitising rasters will transform the spatial extent into vector data to be included in the transformed dataset for the Bristol 5K.
+        The data will be indistiguishable from the transformed TMF data, building out a robust view of the sample data.
+        </p>
+
+        <h2 class="govuk-heading-m">
+          What have we done?
+        </h2>
+        <h3 class="govuk-heading-s">
+          Proposed method
+        </h3>
+
+        <p>The proposed method is to start simple and build complexity as needed. The test area of the Bristol 5K contains 10,891 plans. 
+          From these plans we identified those which are simplest to transform as they contain the least, but most important information - red edged only. 
+          The complexity will then start to be built in, looking at plans with more and more coloured spatial extents to increase the percent plans able to be digitised.</p>
+          <p>It is unlikely every single plan will be able to digitised automatically, due to the complexity and illegibility of existing plans, even from the human eye. However, the percentage that can be digitised is really promising.</p>
+
+        <h3 class="govuk-heading-s">
+          Outcomes
+        </h3>
+        <p>
+          We identified that 84% of plans contain red edging only (9,344 with no reference extents). Because rasters are not machine readable, and it would be an enormous effort for a human to check such large quantities of plans, this is really important information which we've never had before. 
+          Understanding the range of raster types gives us a far better understanding of the problem. </p>
+          <p>This is for the Bristol 5K sample and will be validated with the 3 selected local authorities to confirm if these figures remain consistent across different geographies (rural, urban and coastal). 
+          </p>
+          
+          <img src="/public/images/id-red-edge2.png" alt="red edging on a map" style="width:530px;height:390px;">
+
+          <h3 class="govuk-heading-s">
+            Red egde polygon extraction
+          </h3>
+          <p>Once this was identified we could start to test methods for extracting the red edging from those plans. 
+            We started with a computer vision approach, which looks for areas which contain colour within a certain threshold.</p>
+            <p>Originally this resulted in around 9,000 polygons being extracted from the pages - at least 1 polygon being extracted on over 90% of all red only plans in the sample area. 
+              Further work to refine this method has resulted in at least 1 polygon being extracted from every red only map page. </p>
+            <p>Computer vision based method works really well for maps with only red, but we've discovered that it doesn't generalise well to maps with multiple colours. 
+              Currently we are investigating deep learning based methods of identifying red edging where map images have more coloured extents than just red edging.
+            This is already proving really successful. </p>
+            <p>This is a shift in moving from a computer vision solution, which is absolute, to a probabalistic method. It has a focus on object detection and image segmentation - which are used all around us everyday, such as where you blur your Teams background and it will identify where you (the object) to remain clear.</p>
+
+          <h2 class="govuk-heading-m">
+           Geolocation
+          </h2>
+          <p> Once the polygon is extracted from the plan, we know know the shape of the thing, it's boundaries, but we don't know where it exists in the real world. The plan image has a coordinate, but that only corresponds to its relative position on the map, not on the ground.
+            Much like trying to put together a jigsaw puzzle, extraction gives us the shape of the piece, but we still need to figure out where it fits.
+          </p>
+
+          <img src="/public/images/geolocation.png" alt="illustration showing geolocation as a puzzle" style="width:630px;height:370px;">
+          <p>Because raster images don't contain any spatial metadata, the scale, orientation and location values which would easily give us the true alignment just don't exist. Therefore we need a method to geolocate where that polygon actually references.</p>
+
+          <p>To geolocate the relative position from the rest of the detail on the map, it is possible but poses it's own host of complications. To use our proposed method of starting simple, we work towards the idea that the most extracted shapes should be geolocatable in a more straightforward way.</p>
+          <p>We already hold, or have access to, a lot of different spatial data related to titles, some of which matches title extents in a lot of instances. Instead of geolocating our extracted polygons, we instead have focused on identifying where our existing spatial data matches the shape of the shape on the raster plan.</p>
+          <p>This means rather than worrying about geolocating and scaling the extracted polygon, we can instead compare this polygon to existing spatial data and replace the extracted polygon with correctly created polygons.</p>
+          <p>So far, over 90% of the red-edged only have been matched to an index polygon with a high degree of accuracy.</p>
+          
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <!-- navigation information  -->
+	        {% include "./includes/side-navigation.html" %}
+	      <!-- end - navigation information  -->
+    </div>
+
+  </div>
+
+{% endblock %}
