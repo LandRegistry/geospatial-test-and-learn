@@ -105,9 +105,40 @@
         <p>We demonstrated that transforming TMF into open geospatial formats is feasible, accurate and repeatable. This unlocks the potential to modernise mapping systems, improve register data, and support future digital services.</p>
     
         <h2 class="govuk-heading-m">
-          What next?
+          Known limitations
         </h2>
-    
+
+        <h3 class="govuk-heading-s">
+          Unhandled TMF classes
+        </h3>
+
+            <p>We have been investigating TMF further and it's known limitations. There are some classes in the sample data which don't map to typical geometric classes (lines, polygons, etc), these include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><strong>Splines</strong> - a type we believe is specific to HMLR (curly lines with points at each end)</li>
+              <li><strong>Styling</strong> - We have verified we can reproduce the styles from the title plan from the attributes in the TMF, however we have not aimed for a 100% accurate reproduction so far. There are style aspects we are now exploring:</li>
+              <ul>
+                <li>Fonts</li>
+                <li>Text alignment</li>
+                <li>Varieties of hatching</li>
+              </ul>
+              </ul>
+
+              <h3 class="govuk-heading-s">
+                Invalid geometry
+              </h3>
+              <p>We have had cases within the sample data where the resulting geometry was not “valid” according to OGC standards. 
+                We need to verify if this is due to the geometry stored within the TMF or an issue with how we transform it </p>
+
+                <h3 class="govuk-heading-s">
+                  Unexpected feature ids
+                </h3>
+                <p>A small number of the resulting geometries (85 out of 3.5 million) had feature ids which didn't match what we would expect from their geometry types.
+                   We don't know if this is an issue with the source data, the TMF library, or our conversion code. </p>
+
+                  <h3 class="govuk-heading-s">
+                    Arc transform
+                  </h3>
+                  <p>The arc transform was complex but we limited the scope of its testing appropriately to the current "test and learn" phase of work.</p>
       </div>
 
 
