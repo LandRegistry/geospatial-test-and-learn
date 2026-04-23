@@ -46,7 +46,7 @@
       <p>
          More than half of our spatial data isn't currently held in a digital format. 
          Over 50% of HMLRs spatial data still exists in a format which is not machine interpretable, not machine readable and not able to be used with modern digital tools.
-         This is split primarily between things which are stored on paper and things which are stored as scanned documents - esstentially as useful as paper, with the exception that you can view it anywhere at any time.</p>
+         This is split primarily between things which are stored on paper and things which are stored as scanned documents - essentially as useful as paper, with the exception that you can view it anywhere at any time.</p>
 
          <p>This is quite a big deal for the ambition of having a geospatial register as it means over half of our spatial data cannot currently be used.
          To fix this, that data needs to be digitized and made to be machine readable.
@@ -56,7 +56,7 @@
         What is a raster?
       </h2>
       <p>We are calling these file types rasters, but unfortunately they're not actual rasters, they're essentially just a picture. A raster as we've referenced it in this project is simply a digital scan of a title plan document. These are generally stored as PDFs. 
-        They represent one on 3 ways our plans data is currently stored, the others being paper plans in the File Store which have never been scanned in, and the digital plans currently held in TMF. 
+        They represent one of 3 ways our plans data is currently stored, the others being paper plans in the File Store which have never been scanned in, and the digital plans currently held in TMF. 
         It contains no metadata or further information about the spatial extent it indicates. That indication is only for the human eye as it is currently not machine readable. </p>
       
         <img src="/public/images/file-types.png" alt="Illustration showing the types of files in land registry" style="width:630px;height:490px;">
@@ -73,8 +73,8 @@
         </h3>
 
         <p>The proposed method is to start simple and build complexity as needed. The test area of the Bristol 5K contains 10,891 plans. 
-          From these plans we identified those which are simplest to transform as they contain the least, but most important information - red edged only. 
-          The complexity will then start to be built in, looking at plans with more and more coloured spatial extents to increase the percent plans able to be digitised.</p>
+          From these plans we identified those which are simplest to transform as they contain the least, but most important information - red edging only. 
+          The complexity will then start to be built in, looking at plans with more and more coloured spatial extents to increase the percentage plans able to be digitised.</p>
           <p>It is unlikely every single plan will be able to digitised automatically, due to the complexity and illegibility of existing plans, even from the human eye. However, the percentage that can be digitised is really promising.</p>
 
         <h3 class="govuk-heading-s">
@@ -89,7 +89,7 @@
           <img src="/public/images/id-red-edge2.png" alt="red edging on a map" style="width:530px;height:390px;">
 
           <h3 class="govuk-heading-s">
-            Red egde polygon extraction
+            Red edge polygon extraction
           </h3>
           <p>Once this was identified we could start to test methods for extracting the red edging from those plans. 
             We started with a computer vision approach, which looks for areas which contain colour within a certain threshold.</p>
@@ -103,7 +103,7 @@
           <h2 class="govuk-heading-s">
            Geolocation
           </h2>
-          <p> Once the polygon is extracted from the plan, we know know the shape of the thing, it's boundaries, but we don't know where it exists in the real world. The plan image has a coordinate, but that only corresponds to its relative position on the map, not on the ground.
+          <p> Once the polygon is extracted from the plan, we know the shape of the thing, it's boundaries, but we don't know where it exists in the real world. The plan image has a coordinate, but that only corresponds to its relative position on the map, not on the ground.
             Much like trying to put together a jigsaw puzzle, extraction gives us the shape of the piece, but we still need to figure out where it fits.
           </p>
 
@@ -113,7 +113,7 @@
           <p>To geolocate the relative position from the rest of the detail on the map, it is possible but poses it's own host of complications. To use our proposed method of starting simple, we work towards the idea that the most extracted shapes should be geolocatable in a more straightforward way.</p>
           <p>We already hold, or have access to, a lot of different spatial data related to titles, some of which matches title extents in a lot of instances. Instead of geolocating our extracted polygons, we instead have focused on identifying where our existing spatial data matches the shape of the shape on the raster plan.</p>
           <p>This means rather than worrying about geolocating and scaling the extracted polygon, we can instead compare this polygon to existing spatial data and replace the extracted polygon with correctly created polygons.</p>
-          <p>So far, over 90% of the red-edged only have been matched to an index polygon with a high degree of accuracy.</p>
+          <p>So far, over 90% of the red-edged only extents have been matched to an index polygon with a high degree of accuracy.</p>
           
     </div>
 
